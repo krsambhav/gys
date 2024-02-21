@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "HTTP Request Capture",
+  "version": "1.0",
+  "description": "Capture and analyze HTTP requests made by webpages.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.usvisascheduling.com/*"],
+      "js": ["script.js"]
+    }
+  ]
+}
